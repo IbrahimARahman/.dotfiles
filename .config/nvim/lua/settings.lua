@@ -25,8 +25,8 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.env.HOME  .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.undodir = vim.env.HOME  .. "/.vim/undodir"
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -34,6 +34,6 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 
 vim.opt.updatetime = 50
