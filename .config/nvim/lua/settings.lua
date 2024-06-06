@@ -15,7 +15,7 @@ local setIndentGroup = vim.api.nvim_create_augroup('setIndent', { clear = true }
 -- Create the autocmd for setting indent options
 vim.api.nvim_create_autocmd('FileType', {
   group = setIndentGroup,
-  pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'yaml', 'lua', 'jsx', 'tsx', 'typescriptreact', 'javascriptreact' },
+  pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'yaml', 'lua', 'jsx', 'tsx', 'typescriptreact', 'javascriptreact' },
   command = 'setlocal shiftwidth=2 tabstop=2 softtabstop=2'
 })
 
