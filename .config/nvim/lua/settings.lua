@@ -37,3 +37,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
 
 vim.opt.updatetime = 50
+
+-- turn off mouse in vim
+vim.opt.mouse = ""
