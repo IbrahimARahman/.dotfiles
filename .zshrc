@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 alias vim="nvim"
 alias cd="z"
+alias fcd="zi"
 alias python=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 alias pip=/Library/Frameworks/Python.framework/Versions/3.11/bin/pip3
 

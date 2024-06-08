@@ -19,6 +19,15 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal shiftwidth=2 tabstop=2 softtabstop=2'
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = vim.api.nvim_create_augroup("FormatOptions", { clear = true }),
+  pattern = { "*" },
+  callback = function()
+    vim.opt_local.fo:remove("o")
+    vim.opt_local.fo:remove("r")
+  end,
+})
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
