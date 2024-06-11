@@ -29,10 +29,6 @@ alias fcd="zi"
 alias python=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 alias pip=/Library/Frameworks/Python.framework/Versions/3.11/bin/pip3
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/hima/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

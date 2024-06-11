@@ -55,6 +55,7 @@ return {
     local lspkind = require("lspkind")
     require("supermaven-nvim").setup({
       disable_inline_completion = true,
+      disable_keymaps = true,
     })
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#141414" })
