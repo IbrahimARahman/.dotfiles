@@ -43,9 +43,17 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
 -- turn off mouse in vim
 vim.opt.mouse = ""
+
+local signs = { Error = "", Warn = "", Hint = "", Info = "" } -- Use any icons you prefer
+
+-- Define new signs
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl })
+end
