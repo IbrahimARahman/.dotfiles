@@ -10,12 +10,14 @@ return {
     "hrsh7th/nvim-cmp",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    "mlaursen/vim-react-snippets",
     "j-hui/fidget.nvim",
     "supermaven-inc/supermaven-nvim",
     "onsails/lspkind.nvim",
   },
   config = function()
     local cmp = require('cmp')
+    require("vim-react-snippets").lazy_load()
     local cmp_lsp = require("cmp_nvim_lsp")
     local capabilities = vim.tbl_deep_extend(
       "force",
@@ -23,7 +25,7 @@ return {
       vim.lsp.protocol.make_client_capabilities(),
       cmp_lsp.default_capabilities())
 
-    require("fidget").setup({})
+    require("fidget").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {

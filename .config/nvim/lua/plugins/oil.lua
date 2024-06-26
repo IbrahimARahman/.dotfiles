@@ -9,6 +9,7 @@ return {
 			print("Working directory set to:" .. current_dir)
 		end
 		oil.setup({
+      delete_to_trash = true,
 			view_options = {
 				show_hidden = true,
 			},

@@ -47,3 +47,11 @@ unset __conda_setup
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/hima/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
