@@ -12,7 +12,6 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "mlaursen/vim-react-snippets",
     "j-hui/fidget.nvim",
-    "supermaven-inc/supermaven-nvim",
     "onsails/lspkind.nvim",
   },
   config = function()
@@ -55,10 +54,6 @@ return {
       }
     })
     local lspkind = require("lspkind")
-    require("supermaven-nvim").setup({
-      disable_inline_completion = true,
-      disable_keymaps = true,
-    })
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#141414" })
     cmp.setup({
@@ -80,7 +75,6 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
       }),
       sources = cmp.config.sources {
-        { name = 'supermaven' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },         -- For luasnip users.
         { name = 'buffer' },
