@@ -28,6 +28,7 @@ alias cd="z"
 alias fcd="zi"
 alias python=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 alias pip=/Library/Frameworks/Python.framework/Versions/3.11/bin/pip3
+export PATH=${PATH}:/usr/local/mysql/bin/
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
