@@ -13,6 +13,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"mlaursen/vim-react-snippets",
 			"j-hui/fidget.nvim",
+      "onsails/lspkind-nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -38,9 +39,17 @@ return {
 						})
 					end,
 
+          ["sqlls"] = function ()
+            require("lspconfig")["sqlls"].setup({
+              capabilities = capabilities,
+              root_dir = function(fname)
+                return require("lspconfig").util.root_pattern(".git", "sql")(fname) or vim.fn.getcwd()
+              end,
+            })
+          end,
+
 					["lua_ls"] = function()
-						local lspconfig = require("lspconfig")
-						lspconfig.lua_ls.setup({
+				    require("lspconfig")["sqlls"].setup({
 							capabilities = capabilities,
 							settings = {
 								Lua = {
@@ -75,10 +84,26 @@ return {
 					["<C-Space>"] = cmp.mapping.complete(),
 				}),
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
+					{ name = "nvim_lsp" },
 					{ name = "buffer" },
 				}),
+        formatting = {
+          format = require("lspkind").cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            before = function (entry, vim_item)
+              vim_item.menu = ({
+                luasnip = "[Snippet]",
+                nvim_lsp = "[LSP]",
+                buffer = "[Buffer]",
+              })[entry.source.name]
+              return vim_item
+            end
+          }),
+        },
+        preselect = cmp.PreselectMode.None,
 			})
 
 			vim.diagnostic.config({

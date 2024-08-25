@@ -34,6 +34,11 @@ return {
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-    vim.keymap.set("n", "<leader>fd", "<cmd>Telescope fd find_command=fd,-t=d,--hidden<cr>", {})
+    vim.keymap.set("n", "<leader>fd", function()
+      builtin.find_files({
+          prompt_title = "Find Directories",
+          find_command = {"fd", "-t=d", "--hidden"}
+      })
+    end, {})
   end,
 }
