@@ -29,24 +29,6 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 local autocmd = vim.api.nvim_create_autocmd
 
-vim.keymap.set("n", "<leader>rt", ":write | edit | TSBufEnable highlight<CR>")
-local function run_once()
-  if vim.b.run_once_executed then
-    return
-  end
-  vim.b.run_once_executed = true
-
-  vim.defer_fn(function()
-    if vim.bo.buftype == "" then
-      vim.cmd("write | edit | TSBufEnable highlight")
-    end
-  end, 50)
-end
-
-autocmd("BufReadPost", {
-  callback = run_once,
-})
-
 vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true })
 
 autocmd('LspAttach', {
