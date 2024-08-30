@@ -47,6 +47,8 @@ autocmd("BufReadPost", {
   callback = run_once,
 })
 
+vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true })
+
 autocmd('LspAttach', {
     callback = function(e)
         local opts = { buffer = e.buf }
