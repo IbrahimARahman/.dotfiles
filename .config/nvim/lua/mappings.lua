@@ -30,6 +30,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 local autocmd = vim.api.nvim_create_autocmd
 
 vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-c>', '<Esc>', { noremap = true, silent = true })
 
 autocmd('LspAttach', {
     callback = function(e)
