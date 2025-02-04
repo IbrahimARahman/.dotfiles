@@ -34,7 +34,7 @@ return {
 					end,
 
 					["lua_ls"] = function()
-						require("lspconfig")["sqlls"].setup({
+						require("lspconfig")["lua_ls"].setup({
 							capabilities = capabilities,
 							settings = {
 								Lua = {
