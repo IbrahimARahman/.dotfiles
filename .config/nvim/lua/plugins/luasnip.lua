@@ -1,7 +1,6 @@
 return {
   "L3MON4D3/LuaSnip",
   lazy = false,
-  dependencies = { "saadparwaiz1/cmp_luasnip" },
   config = function()
     local ls = require("luasnip")
     ls.setup({
